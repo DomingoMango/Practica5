@@ -55,28 +55,32 @@ namespace ClassLibrary1
         public void Emi_Discount(int loanAmount, int RelativeMarking, int tenure, int interest, out int emi)
         {
             emi = (loanAmount + (loanAmount * interest / 100)) / tenure;
+            Console.WriteLine("Tu emi es: " + emi);
             if (RelativeMarking == 1)
             {
-                emi = emi * (emi * 10 / 100);
+                emi =(emi * 10 / 100);
             }
             else if (RelativeMarking == 2)
             {
-                emi = emi * (emi * 8 / 100);
+                emi =(emi * 8 / 100);
             }
             else if (RelativeMarking == 3)
             {
-                emi = emi * (emi * 6 / 100);
+                emi =(emi * 6 / 100);
             }
             else if (RelativeMarking > 3)
             {
-                emi = emi * (emi * 4 / 100);
+                emi =(emi * 4 / 100);
             }
         }
         public void SalaryDeduction(ref float salary, int relativeMarking, int tenure, int interest, int LoanAmount, out int emi)
         {
+            Console.WriteLine("Tu salario antes: " + salary);
             Emi_Discount(LoanAmount,relativeMarking,tenure,interest,out emi);
             salary = salary - emi;
+            Console.WriteLine("Tu salario es: " + emi);
             Console.WriteLine("Tu salario es: " + salary);
+
         }
     }
 }
