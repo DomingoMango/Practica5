@@ -75,10 +75,9 @@ namespace ClassLibrary1
         }
         public void SalaryDeduction(ref float salary, int relativeMarking, int tenure, int interest, int LoanAmount, out int emi)
         {
-            Console.WriteLine("Tu salario antes: " + salary);
+            
             Emi_Discount(LoanAmount,relativeMarking,tenure,interest,out emi);
             salary = salary - emi;
-            Console.WriteLine("Tu salario es: " + emi);
             Console.WriteLine("Tu salario es: " + salary);
 
         }
